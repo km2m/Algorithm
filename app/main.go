@@ -55,8 +55,11 @@ func main() {
 	//fmt.Println(add(42, 13))
 	fmt.Println(split(17))
 	printV()
-	f := fibonacci()
-	for i := 0; i < 20; i++ {
-		fmt.Println(f())
-	}
+	/*
+		f := fibonacci()
+		for i := 0; i < 20; i++ {
+					fmt.Println(f())
+		}
+	*/
+	TestCon()
 }
