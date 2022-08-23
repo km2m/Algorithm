@@ -30,3 +30,16 @@ func QuickSort(xs []int) []int {
 	QuickSort_0(xs, 0, len(xs)-1)
 	return xs
 }
+
+func InsertOrder(xs []int) []int {
+	for i := 1; i < len(xs); i++ {
+		//
+		key := xs[i]
+		j := i - 1
+		for ; j >= 0 && xs[j] > key; j-- {
+			xs[j+1] = xs[j]
+		}
+		xs[j+1] = key
+	}
+	return xs
+}

@@ -23,6 +23,8 @@ var _ = Describe("Quick Sort", func() {
 	It("", func() {
 		Expect(QuickSort([]int{1, 3, 2})).To(Equal([]int{1, 2, 3}))
 		Expect(QuickSort(rand.Perm(500))).To(Equal(MakeRange(0, 500, 1)))
+		Expect(InsertOrder([]int{1, 3, 2, 0, 4})).To(Equal(MakeRange(0, 5, 1)))
+		Expect(InsertOrder(rand.Perm(500))).To(Equal(MakeRange(0, 500, 1)))
 	})
 })
 

@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-func TestApp(t *testing.T) {
+func TestAlgo(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "App Test")
+	RunSpecs(t, "Algo Test")
 }
