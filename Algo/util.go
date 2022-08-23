@@ -28,6 +28,7 @@ func RandString() string {
 	rs := randString(rand.Intn(10)+6, alpahabet)
 	//fmt.Println(rs)
 	return rs
+
 	//return "123"
 }
 
@@ -39,7 +40,6 @@ func MakeRange(begin int, end int, step int) (sequence []int) {
 	if (end > begin && step > 0) || (end < begin && step < 0) {
 		count = (end-step-begin)/step + 1
 	}
-
 	sequence = make([]int, count)
 	for i := 0; i < count; i, begin = i+1, begin+step {
 		sequence[i] = begin
