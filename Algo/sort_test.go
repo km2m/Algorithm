@@ -3,7 +3,6 @@ package Algo
 import (
 	"fmt"
 	"math/rand"
-	"sort"
 	"testing"
 
 	. "github.com/onsi/ginkgo/v2"
@@ -25,14 +24,20 @@ var _ = Describe("Quick Sort", func() {
 		Expect(QuickSort(rand.Perm(500))).To(Equal(MakeRange(0, 500, 1)))
 		Expect(InsertOrder([]int{1, 3, 2, 0, 4})).To(Equal(MakeRange(0, 5, 1)))
 		Expect(InsertOrder(rand.Perm(500))).To(Equal(MakeRange(0, 500, 1)))
+		Expect(MergeSort([]int{1, 3, 2, 0, 4})).To(Equal(MakeRange(0, 5, 1)))
+		Expect(MergeSort(rand.Perm(500))).To(Equal(MakeRange(0, 500, 1)))
 	})
 })
 
 func TestQuickSort(t *testing.T) {
-	xs := []int{1, 3, 4, 7, 2, 6}
+	//xs := []int{1, 3, 4, 7, 2, 6}
+	slc1 := []int{58, 69, 40, 45, 11, 56, 67, 21, 65}
+	slc2 := make([]int, 4)
+	copy(slc2, slc1[2:6])
+	fmt.Println(slc2)
 	//QuickSort(xs, 0, len(xs)-1)
-	sort.Ints(xs)
-	fmt.Println(xs)
+	//sort.Ints(xs)
+	//fmt.Println(xs)
 	// c := quick.Config{MaxCount: 1000000}
 	//if err := quick.Check(addW, &c); err != nil {
 	//t.Error(err)

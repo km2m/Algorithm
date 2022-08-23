@@ -43,3 +43,36 @@ func InsertOrder(xs []int) []int {
 	}
 	return xs
 }
+
+func Merge(A []int, l int, m int, r int) {
+	ll := make([]int, m-l+1)
+	rr := make([]int, r-(m+1)+1)
+	copy(ll, A[l:m+1])
+	copy(rr, A[m+1:r+1])
+	i, j := 0, 0
+	for k := l; k <= r; k++ {
+		if i <= len(ll)-1 &&
+			(j > len(rr)-1 || ll[i] <= rr[j]) {
+			A[k] = ll[i]
+			i++
+		} else {
+			A[k] = rr[j]
+			j++
+		}
+	}
+}
+
+func MergeSort_0(A []int, l int, r int) {
+	if l < r {
+		m := (l + r) / 2
+		MergeSort_0(A, l, m)
+		MergeSort_0(A, m+1, r)
+		Merge(A, l, m, r)
+	}
+}
+
+func MergeSort(A []int) (B []int) {
+	MergeSort_0(A, 0, len(A)-1)
+	B = A
+	return
+}
