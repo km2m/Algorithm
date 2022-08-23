@@ -3,11 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/samber/lo"
+	"math/rand"
 )
-
-func add(x int, y int) int {
-	return x + y
-}
 
 // Named Return Values
 func split(sum int) (x, y int) {
@@ -49,6 +46,9 @@ func fibonacci() func() int {
 }
 
 func main() {
+	//r := rand.Rand{}
+	//rand.Seed(86)
+	fmt.Println(rand.Intn(23))
 	fmt.Println("hello world")
 	names := lo.Uniq[string]([]string{"Samuel", "Marc", "Samuel"})
 	fmt.Println(names)
