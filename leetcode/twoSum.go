@@ -1,6 +1,8 @@
 package leetcode
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func twoSum(num []int, target int) []int {
 	m := make(map[int]int)
@@ -58,5 +60,40 @@ func addTwoNumbers0(l1 *ListNode, l2 *ListNode) *ListNode {
 }
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	return nil
+	retrieveVal := func(n *ListNode) (res int) {
+		if n == nil {
+			res = 0
+		} else {
+			res = n.val
+		}
+		return
+	}
+
+	nextNode := func(n *ListNode) *ListNode {
+		if n == nil {
+			return nil
+		} else {
+			return n.Next
+		}
+	}
+
+	left := 0
+	node := ListNode{0, nil}
+	curNode := &node
+	for l1 != nil && l2 != nil {
+		newNode := new(ListNode)
+		sum := retrieveVal(l1) + retrieveVal(l2) + left
+		l1 = nextNode(l1)
+		l2 = nextNode(l2)
+		left = sum / 10
+		newNode.val = sum % 10
+		curNode.Next = newNode
+		curNode = newNode
+	}
+
+	if left != 0 {
+		curNode.Next = new(ListNode)
+		curNode.Next.val = left
+	}
+	return node.Next
 }
