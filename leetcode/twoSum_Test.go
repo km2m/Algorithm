@@ -18,6 +18,7 @@ func TestAddTwoNumbers(t *testing.T) {
 	n1 := MakeListNode(99991)
 	n2 := MakeListNode(19998)
 	t.Log(addTwoNumbers(n1, n2).Show())
+	t.Log(addTwoNumbers0(n1, n2).Show())
 	//t.Log(n.TotalVal())
 	t.Log(MakeListNode(999991).Show())
 	//t.Errorf("hello world")
