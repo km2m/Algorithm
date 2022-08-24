@@ -1,11 +1,13 @@
 package main_test
 
 import (
+	lc "Algorithm/leetcode"
 	"bytes"
 	"fmt"
-	"golang.org/x/exp/rand"
 	"testing"
 	"testing/quick"
+
+	"golang.org/x/exp/rand"
 )
 
 // r := rand.Rand{}
@@ -66,4 +68,13 @@ func TestIntMinTableDriven(t *testing.T) {
 			}
 		})
 	}
+}
+
+func TestStuff(t *testing.T) {
+	n1 := lc.MakeListNode(99991)
+	n2 := lc.MakeListNode(19998)
+	t.Log(lc.AddTwoNumbers(n1, n2).Show())
+	//t.Log(n.TotalVal())
+	t.Log(lc.MakeListNode(999991).Show())
+	//t.Errorf("hello world")
 }

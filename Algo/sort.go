@@ -51,8 +51,13 @@ func Merge(A []int, l int, m int, r int) {
 	copy(rr, A[m+1:r+1])
 	i, j := 0, 0
 	for k := l; k <= r; k++ {
-		if i <= len(ll)-1 &&
-			(j > len(rr)-1 || ll[i] <= rr[j]) {
+		if j > len(rr)-1 {
+			A[k] = ll[i]
+			i++
+		} else if i > len(ll)-1 {
+			A[k] = rr[j]
+			j++
+		} else if ll[i] <= rr[j] {
 			A[k] = ll[i]
 			i++
 		} else {
